@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#06051a">
+<title>像素魔导 · 语音施法练习场</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="hud">
+  <div id="top">
+    <div id="stats" class="px">
+      <div>总伤害 <b id="total">0</b></div>
+      <div>施法 <b id="casts">0</b> 次</div>
+      <div>最高 <b id="maxHit">0</b></div>
+    </div>
+    <div id="combo" class="px"><span id="comboNum">0</span><small>连击</small></div>
+  </div>
+  <div id="banner" class="px"></div>
+  <div id="bottom">
+    <div id="heard" class="px"><span class="mic">🎤</span><span id="heardText">说出咒语「操」释放魔法</span></div>
+    <div id="controls">
+      <button id="micBtn" class="px">🎙️ 开始聆听</button>
+      <button id="modeBtn" class="px">模式：语音识别</button>
+      <button id="soundBtn" class="px">🔊</button>
+    </div>
+    <div id="volPanel">
+      <div id="level"><i></i></div>
+      <label class="px">灵敏度 <input id="sens" type="range" min="0" max="100" value="55"></label>
+    </div>
+    <div id="tip" class="px">也可以点击画面 / 按空格施法</div>
+  </div>
+</div>
+
+<div id="start">
+  <h1 class="px">像素魔导</h1>
+  <div class="sub px">— 语音施法练习场 —</div>
+  <div class="spell px">咒语：<b>操</b></div>
+  <p class="desc px">大声念出咒语，魔法师就会向稻草人释放魔法。<br>连续念就能连续施法，每 10 连击触发终极魔法！</p>
+  <button id="startBtn" class="px">✦ 开始施法 ✦</button>
+  <p class="note">推荐 Chrome / Edge / Safari，需在 HTTPS 或 localhost 下打开以使用麦克风。<br>若语音识别不可用会自动切换为「声控模式」（任意短促声音即可施法）。</p>
+</div>
+
+<script src="js/audio.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/core.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/world.js"></script>
+<script src="js/spells.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
